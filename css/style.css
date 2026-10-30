@@ -389,6 +389,17 @@ h3 { font-size: 1.3125rem; line-height: 1.2; letter-spacing: -0.022em; }
   background: #ffd60a;
   box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.16);
 }
+.status-concluido {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  width: fit-content;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--text-2);
+}
+.status-concluido::before {
+  content: ""; width: 7px; height: 7px; border-radius: 50%;
+  background: #0b9717;
+  box-shadow: 0 0 0 3px rgba(255, 214, 10, 0.16);
+}
 
 .card p { color: var(--text-2); font-size: 0.9688rem; line-height: 1.5; }
 
