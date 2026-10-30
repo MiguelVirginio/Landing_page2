@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Responsividade
+   Tablet: até 860px · Mobile: até 520px
+   ========================================================================== */
+
+@media (max-width: 860px) {
+
+  /* Menu vira uma folha translúcida que nasce do botão (origem ancorada) */
+  .menu-toggle { display: grid; }
+
+  .nav-links {
+    position: absolute;
+    top: calc(var(--nav-h) + 0.5rem);
+    right: clamp(1rem, 4vw, 1.5rem);
+    left: clamp(1rem, 4vw, 1.5rem);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--s-2);
+    background: var(--material);
+    -webkit-backdrop-filter: saturate(180%) blur(28px);
+    backdrop-filter: saturate(180%) blur(28px);
+    border-radius: var(--radius-l);
+    box-shadow: 0 0 0 1px var(--line-strong), 0 30px 60px rgba(0, 0, 0, 0.55);
+
+    transform-origin: top right;
+    opacity: 0;
+    transform: scale(0.96) translateY(-8px);
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--t-base) var(--ease),
+                transform var(--t-base) var(--ease),
+                visibility 0s linear var(--t-base);
+  }
+  .nav-links.aberto {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+
+  .nav-links a {
+    padding: 0.9rem 1rem;
+    font-size: 1.0625rem;
+    color: var(--text);
+    border-radius: var(--radius-m);
+  }
+  .nav-links a.active { background: rgba(255, 255, 255, 0.10); }
+
+  .hero { padding: var(--s-7) 0; }
+
+  /* Bento vira coluna única */
+  .span-7, .span-5 { grid-column: span 12; }
+
+  .contato-container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  body { font-size: 1rem; }
+
+  .foto-perfil { width: 6.25rem; height: 6.25rem; }
+
+  .hero-acoes { flex-direction: column; align-items: stretch; }
+  .hero-acoes .btn { width: 100%; }
+
+  .card-botoes .btn { flex: 1; }
+
+  .footer .container { flex-direction: column; text-align: center; }
+}
