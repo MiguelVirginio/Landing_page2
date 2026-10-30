@@ -280,7 +280,9 @@ h3 { font-size: 1.3125rem; line-height: 1.2; letter-spacing: -0.022em; }
     radial-gradient(60rem 32rem at 50% -8%, rgba(41, 151, 255, 0.20), transparent 70%);
 }
 
-.hero-content { max-width: 52rem; }
+.hero-content {  width: 100%;
+    max-width: 52rem;
+    margin-inline: auto; }
 
 .foto-perfil {
   width: 7.5rem; height: 7.5rem;
